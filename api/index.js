@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-mongoose.connect(process.env.MONGO).then(()=>{
+mongoose.connect("mongodb+srv://subanu292004:subanu@mern-realestate.umnk6xx.mongodb.net/?retryWrites=true&w=majority&appName=mern-realEstate").then(()=>{
     console.log('Connected to MongoDB');
 })
 .catch((err) => {
