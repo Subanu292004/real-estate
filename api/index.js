@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRouter from './routes/user.routes.js';
 dotenv.config();
 
 mongoose.connect("mongodb+srv://subanu292004:subanu@mern-realestate.umnk6xx.mongodb.net/?retryWrites=true&w=majority&appName=mern-realEstate").then(()=>{
@@ -18,3 +19,4 @@ app.listen(3000, ()=>{
 });
 
 
+app.use("/api/user",userRouter);
