@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/user.routes.js';
+import authRouter from './routes/auth.route.js';
 dotenv.config();
 
 mongoose.connect("mongodb+srv://subanu292004:subanu@mern-realestate.umnk6xx.mongodb.net/?retryWrites=true&w=majority&appName=mern-realEstate").then(()=>{
@@ -14,9 +15,12 @@ mongoose.connect("mongodb+srv://subanu292004:subanu@mern-realestate.umnk6xx.mong
 
 const app=express();
 
+app.use(express.json());
+
 app.listen(3000, ()=>{
     console.log('Server is running on port 3000');
 });
 
 
 app.use("/api/user",userRouter);
+app.use("/api/auth",authRouter);
